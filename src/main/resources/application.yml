@@ -1,0 +1,13 @@
+server:
+  port: 8081
+
+arantes:
+  client:
+    address:
+      url: http://localhost:8082/addresses
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/hexagonal
+      field-naming-strategy: org.springframework.data.mapping.model.SnakeCaseFieldNamingStrategy
