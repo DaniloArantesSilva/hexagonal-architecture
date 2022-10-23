@@ -14,7 +14,6 @@ public interface CustomerMapper {
     @Mapping(target = "isValidCpf", ignore = true)
     Customer toCustomer(CustomerRequest customerRequest);
 
-    @Mapping(target = "zipCode", ignore = true)
     CustomerResponse toCustomerResponse(Customer customer);
 
 }

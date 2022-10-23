@@ -7,8 +7,10 @@ public class CustomerResponse {
 
     private String name;
 
+    private AddressResponse address;
+
     private String cpf;
 
-    private String zipCode;
+    private Boolean isValidCpf;
 
 }
