@@ -12,11 +12,11 @@ public class UpdateCustomerConfig {
 
     @Bean
     public UpdateCustomerUseCase updateCustomerUseCase(
-            UpdateCustomerAdapter updateCustomerAdapter,
             FindCustomerByIdUseCase findCustomerByIdUseCase,
-            FindAddressByZipCodeAdapter findCustomerByIdAdapter
+            FindAddressByZipCodeAdapter findAddressByZipCodeAdapter,
+            UpdateCustomerAdapter updateCustomerAdapter
     ) {
-        return new UpdateCustomerUseCase(updateCustomerAdapter, findCustomerByIdUseCase, findCustomerByIdAdapter);
+        return new UpdateCustomerUseCase(findCustomerByIdUseCase, findAddressByZipCodeAdapter, updateCustomerAdapter);
     }
 
 }

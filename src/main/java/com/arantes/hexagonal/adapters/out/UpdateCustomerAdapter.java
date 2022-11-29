@@ -11,10 +11,10 @@ import org.springframework.stereotype.Component;
 public class UpdateCustomerAdapter implements UpdateCustomerOutputPort {
 
     @Autowired
-    private CustomerEntityMapper customerEntityMapper;
+    private CustomerRepository customerRepository;
 
     @Autowired
-    private CustomerRepository customerRepository;
+    private CustomerEntityMapper customerEntityMapper;
 
     @Override
     public void update(Customer customer) {

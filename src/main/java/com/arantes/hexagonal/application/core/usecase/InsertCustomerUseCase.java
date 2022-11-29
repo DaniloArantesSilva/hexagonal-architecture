@@ -8,19 +8,19 @@ import com.arantes.hexagonal.application.ports.out.SendCpfForValidationOutputPor
 
 public class InsertCustomerUseCase implements InsertCustomerInputPort {
 
-    private final InsertCustomerOutputPort insertCustomerOutputPort;
-
     private final FindAddressByZipCodeOutputPort findAddressByZipCodeOutputPort;
+
+    private final InsertCustomerOutputPort insertCustomerOutputPort;
 
     private final SendCpfForValidationOutputPort sendCpfForValidationOutputPort;
 
     public InsertCustomerUseCase(
-            InsertCustomerOutputPort insertCustomerOutputPort,
             FindAddressByZipCodeOutputPort findAddressByZipCodeOutputPort,
+            InsertCustomerOutputPort insertCustomerOutputPort,
             SendCpfForValidationOutputPort sendCpfForValidationOutputPort
     ) {
-        this.insertCustomerOutputPort = insertCustomerOutputPort;
         this.findAddressByZipCodeOutputPort = findAddressByZipCodeOutputPort;
+        this.insertCustomerOutputPort = insertCustomerOutputPort;
         this.sendCpfForValidationOutputPort = sendCpfForValidationOutputPort;
     }
 

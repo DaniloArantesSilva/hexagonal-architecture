@@ -8,20 +8,20 @@ import com.arantes.hexagonal.application.ports.out.UpdateCustomerOutputPort;
 
 public class UpdateCustomerUseCase implements UpdateCustomerInputPort {
 
-    private final UpdateCustomerOutputPort updateCustomerOutputPort;
-
     private final FindCustomerByIdInputPort findCustomerByIdInputPort;
 
     private final FindAddressByZipCodeOutputPort findAddressByZipCodeOutputPort;
 
+    private final UpdateCustomerOutputPort updateCustomerOutputPort;
+
     public UpdateCustomerUseCase(
-            UpdateCustomerOutputPort updateCustomerOutputPort,
             FindCustomerByIdInputPort findCustomerByIdInputPort,
-            FindAddressByZipCodeOutputPort findAddressByZipCodeOutputPort
+            FindAddressByZipCodeOutputPort findAddressByZipCodeOutputPort,
+            UpdateCustomerOutputPort updateCustomerOutputPort
     ) {
-        this.updateCustomerOutputPort = updateCustomerOutputPort;
         this.findCustomerByIdInputPort = findCustomerByIdInputPort;
         this.findAddressByZipCodeOutputPort = findAddressByZipCodeOutputPort;
+        this.updateCustomerOutputPort = updateCustomerOutputPort;
     }
 
     @Override

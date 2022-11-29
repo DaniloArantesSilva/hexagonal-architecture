@@ -18,10 +18,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
-import java.net.URI;
 
 @RestController
 @RequestMapping("/api/v1/customers")
@@ -43,17 +41,10 @@ public class CustomerController {
     private CustomerMapper customerMapper;
 
     @PostMapping
-    public ResponseEntity<String> insert(@Valid @RequestBody CustomerRequest customerRequest) {
+    public ResponseEntity<Void> insert(@Valid @RequestBody CustomerRequest customerRequest) {
         var customer = customerMapper.toCustomer(customerRequest);
         insertCustomerInputPort.insert(customer, customerRequest.getZipCode());
-
-        URI uri = ServletUriComponentsBuilder
-                .fromCurrentRequest()
-                .path("/{id}")
-                .buildAndExpand(customer.getId())
-                .toUri();
-
-        return ResponseEntity.created(uri).build();
+        return ResponseEntity.ok().build();
     }
 
     @GetMapping("/{id}")

@@ -12,7 +12,7 @@ public class DeleteCustomerByIdAdapter implements DeleteCustomerByIdOutputPort {
     private CustomerRepository customerRepository;
 
     @Override
-    public void delete(final String id) {
+    public void delete(String id) {
         customerRepository.deleteById(id);
     }
 

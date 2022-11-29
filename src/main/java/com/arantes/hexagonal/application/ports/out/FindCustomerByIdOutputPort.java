@@ -6,6 +6,6 @@ import java.util.Optional;
 
 public interface FindCustomerByIdOutputPort {
 
-    Optional<Customer> find(final String id);
+    Optional<Customer> find(String id);
 
 }

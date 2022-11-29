@@ -12,7 +12,7 @@ public class SendCpfForValidationAdapter implements SendCpfForValidationOutputPo
     private KafkaTemplate<String, String> kafkaTemplate;
 
     @Override
-    public void send(final String cpf) {
+    public void send(String cpf) {
         kafkaTemplate.send("tp-cpf-validation", cpf);
     }
 
